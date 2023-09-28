@@ -14,62 +14,44 @@ const buttons = document.querySelectorAll('button');
 
 let computerChoice = "";
 
+let userScore = 0;
+let computerScore = 0;
+let round = 0;
 
 buttons.forEach(button => button.addEventListener('click', (e) => {
     userChoice = e.target.id;
     userChoiceDisplay.textContent = userChoice;
     computerChoice = getComputerChoice();
     computerChoiceDisplay.textContent = computerChoice;
+    resultDisplay.textContent = playRound();
+    roundDisplay.textContent = round;
+    playerScoreDisplay.textContent = userScore;
+    computerScoreDisplay.textContent = computerScore;
 }));
 
 function getComputerChoice(){
     let randomNumber = rps[Math.floor(Math.random() * rps.length)];
     return randomNumber;
 }
-   
-let playerScore = 0;
-let computerScore = 0;
-let roundNumber = 0;
 
 function playRound(){
-    let playerChoice = prompt("Rock, Paper or Scissors?").toLowerCase();
-    let computerChoice = getComputerChoice();
+    while(userScore !== 5 && computerScore !== 5){
+        if(userChoice === computerChoice){
+            round++
+            return "Draw";
 
-    if(playerChoice === computerChoice){
-        console.log(`${playerChoice} VS ${computerChoice}`);
-        console.log("This is a tie.");
-        roundNumber++;
-        console.log(`*** TIE GAME ***`);
-        console.log(`${playerScore} - ${computerScore}`);
-        console.log(`--- Round n°${roundNumber} ---`);
-        return "Draw";
-    
-    } else if(playerChoice === "rock" && computerChoice === "scissors" ||
-            playerChoice === "paper" && computerChoice === "rock" ||
-            playerChoice === "scissors" && computerChoice === "paper"){
-                console.log(`${playerChoice} VS ${computerChoice}`);
-                console.log(`${playerChoice} BEATS ${computerChoice}`);
-                playerScore++;
-                roundNumber++;                
-                console.log(`*** YOU WIN! ***`)
-                console.log(`${playerScore} - ${computerScore}`);
-                console.log(`--- Round n°${roundNumber} ---`);
-                return "Win";
-    
-    } else if(playerChoice === "rock" && computerChoice === "paper" ||
-            playerChoice === "paper" && computerChoice === "scissors" ||
-            playerChoice === "scissors" && computerChoice === "rock"){
-                console.log(`${playerChoice} VS ${computerChoice}`);
-                console.log(`${computerChoice} BEATS ${playerChoice}`);
-                computerScore++;
-                roundNumber++;
-                console.log(`*** YOU LOSE... ***`)                
-                console.log(`${playerScore} - ${computerScore}`);
-                console.log(`--- Round n°${roundNumber} ---`);
-                return "Defeat";
-    
-    } else {
-        console.log("Please, only select one of the three options.");
+        } else if (userChoice === 'rock' && computerChoice === 'scissors' ||
+                userChoice === 'paper' && computerChoice === 'rock' ||
+                userChoice === 'scissors' && computerChoice === 'paper'){
+                    round++;
+                    userScore++;
+                    return "Win";
+                
+        } else {
+            round++;
+            computerScore++;
+            return "Defeat";
+        }
     }
 }
 
