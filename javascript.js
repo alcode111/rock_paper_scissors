@@ -21,6 +21,7 @@ function playRound(){
         console.log(`${playerChoice} VS ${computerChoice}`);
         console.log("This is a tie.");
         roundNumber++;
+        console.log(`*** TIE GAME ***`);
         console.log(`${playerScore} - ${computerScore}`);
         console.log(`--- Round n°${roundNumber} ---`);
         return "Draw";
