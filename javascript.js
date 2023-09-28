@@ -53,3 +53,11 @@ function playRound(){
         console.log("Please, only select one of the three options.");
     }
 }
+
+while(playerScore !== 5 && computerScore !== 5){
+    playRound()
+} if(playerScore > computerScore){
+    console.log("##### CONGRATULATIONS!!! You beat the computer! #####");
+} else {
+    console.log("##### DEFEAT! The computer beat you. Maybe next time? #####")
+}
