@@ -1,3 +1,13 @@
+const userChoiceDisplay = document.querySelector('#player-choice');
+const computerChoiceDisplay = document.querySelector('#computer-choice');
+const resultDisplay = document.querySelector('#result');
+
+const playerScoreDisplay = document.querySelector('#player-score');
+const computerScoreDisplay = document.querySelector('#computer-score');
+const roundDisplay = document.querySelector('#round')
+
+const winnerDisplay = document.querySelector('#winner');
+
 function getComputerChoice(){
     let randomNumber = Math.floor(Math.random() * 3) + 1;
     if(randomNumber === 1){
