@@ -12,9 +12,14 @@ const rps = ["rock", "paper", "scissors"];
 
 const buttons = document.querySelectorAll('button');
 
+let computerChoice = "";
+
+
 buttons.forEach(button => button.addEventListener('click', (e) => {
     userChoice = e.target.id;
     userChoiceDisplay.textContent = userChoice;
+    computerChoice = getComputerChoice();
+    computerChoiceDisplay.textContent = computerChoice;
 }));
 
 function getComputerChoice(){
