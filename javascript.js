@@ -8,16 +8,13 @@ const roundDisplay = document.querySelector('#round')
 
 const winnerDisplay = document.querySelector('#winner');
 
+const rps = ["rock", "paper", "scissors"];
+
 function getComputerChoice(){
-    let randomNumber = Math.floor(Math.random() * 3) + 1;
-    if(randomNumber === 1){
-        return "rock"
-    } else if(randomNumber === 2){
-        return "paper"
-    } else {
-        return "scissors"
-    }
+    let randomNumber = rps[Math.floor(Math.random() * rps.length)];
+    return randomNumber;
 }
+   
 
 let playerScore = 0;
 let computerScore = 0;
