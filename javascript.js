@@ -27,6 +27,7 @@ buttons.forEach(button => button.addEventListener('click', (e) => {
     roundDisplay.textContent = round;
     playerScoreDisplay.textContent = userScore;
     computerScoreDisplay.textContent = computerScore;
+    displayWinnerText();
 }));
 
 function getComputerChoice(){
@@ -55,10 +56,10 @@ function playRound(){
     }
 }
 
-while(playerScore !== 5 && computerScore !== 5){
-    playRound()
-} if(playerScore > computerScore){
-    console.log("##### CONGRATULATIONS!!! You beat the computer! #####");
-} else {
-    console.log("##### DEFEAT! The computer beat you. Maybe next time? #####")
+function displayWinnerText(){
+    if(userScore > computerScore && userScore === 5){
+        winnerDisplay.textContent = "CONGRATULATIONS!!! You beat the computer!";
+    } else if(computerScore > userScore && computerScore === 5){
+        winnerDisplay.textContent = "DEFEAT! The computer beat you. Maybe next time?";
+    }
 }
