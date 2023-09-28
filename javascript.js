@@ -10,12 +10,18 @@ const winnerDisplay = document.querySelector('#winner');
 
 const rps = ["rock", "paper", "scissors"];
 
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(button => button.addEventListener('click', (e) => {
+    userChoice = e.target.id;
+    userChoiceDisplay.textContent = userChoice;
+}));
+
 function getComputerChoice(){
     let randomNumber = rps[Math.floor(Math.random() * rps.length)];
     return randomNumber;
 }
    
-
 let playerScore = 0;
 let computerScore = 0;
 let roundNumber = 0;
