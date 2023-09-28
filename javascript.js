@@ -9,13 +9,20 @@ function getComputerChoice(){
     }
 }
 
+let playerScore = 0;
+let computerScore = 0;
+let roundNumber = 0;
+
 function playRound(){
     let playerChoice = prompt("Rock, Paper or Scissors?").toLowerCase();
     let computerChoice = getComputerChoice();
 
     if(playerChoice === computerChoice){
         console.log(`${playerChoice} VS ${computerChoice}`);
-        console.log("This is a tie.")
+        console.log("This is a tie.");
+        roundNumber++;
+        console.log(`${playerScore} - ${computerScore}`);
+        console.log(`--- Round n°${roundNumber} ---`);
         return "Draw";
     
     } else if(playerChoice === "rock" && computerChoice === "scissors" ||
@@ -23,6 +30,11 @@ function playRound(){
             playerChoice === "scissors" && computerChoice === "paper"){
                 console.log(`${playerChoice} VS ${computerChoice}`);
                 console.log(`${playerChoice} BEATS ${computerChoice}`);
+                playerScore++;
+                roundNumber++;                
+                console.log(`*** YOU WIN! ***`)
+                console.log(`${playerScore} - ${computerScore}`);
+                console.log(`--- Round n°${roundNumber} ---`);
                 return "Win";
     
     } else if(playerChoice === "rock" && computerChoice === "paper" ||
@@ -30,6 +42,11 @@ function playRound(){
             playerChoice === "scissors" && computerChoice === "rock"){
                 console.log(`${playerChoice} VS ${computerChoice}`);
                 console.log(`${computerChoice} BEATS ${playerChoice}`);
+                computerScore++;
+                roundNumber++;
+                console.log(`*** YOU LOSE... ***`)                
+                console.log(`${playerScore} - ${computerScore}`);
+                console.log(`--- Round n°${roundNumber} ---`);
                 return "Defeat";
     
     } else {
