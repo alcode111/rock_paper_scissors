@@ -3,27 +3,55 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="style.css">
             <title>Rock/Paper/Scissors</title>
         </head>
 
         <body>
-            <h2>Player Choice: <span id="player-choice"></span></h2>
-            <h2>Computer Choice: <span id="computer-choice"></span></h2>
-            <h2>Result: <span id="result"></span></h2>
-            <button id="rock">ROCK</button>
-            <button id="paper">PAPER</button>
-            <button id="scissors">SCISSORS</button>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h2>Player Score: <span id="player-score"></span></h2>
-            <h2>Computer Score: <span id="computer-score"></span></h2>
-            <h2>Round: <span id="round"></span></h2>
-            <br>
-            <br>
-            <br>
-            <h1>Winner: <span id="winner"></span></h1>
+            <div class="container">
+                <div class="players-choice">
+                    <h2>Player Choice:
+                        <br> 
+                        <br>
+                        <span id="player-choice"></span></h2>
+                    <h2>Computer Choice:
+                        <br>
+                        <br>
+                        <span id="computer-choice"></span></h2>
+                </div>
+
+                <div class="buttons">
+                    <button id="rock">ROCK</button>
+                    <button id="paper">PAPER</button>
+                    <button id="scissors">SCISSORS</button>                    
+                </div>
+
+                <br>
+                <h2>Result: <span id="result"></span></h2>
+                <br>
+                <br>
+
+                <div class="scores">
+                    <h2>Player Score: 
+                        <br>
+                        <br>
+                        <span id="player-score"></span>
+                    </h2>
+
+                    <h2>Computer Score:
+                        <br> 
+                        <br> 
+                        <span id="computer-score"></span>
+                    </h2>
+                </div>
+                <h2>Round: 
+                    <br>
+                    <span id="round"></span>
+                </h2>
+                <br>
+                <br>
+                <h1>Winner: <span id="winner"></span></h1>
+            </div>
 
             <script src="javascript.js"></script>
         </body>
