@@ -67,6 +67,21 @@ button {
     color: black;
 }
 
+button:hover {
+    background-color:lightcoral;
+}
+
+.result {
+    border: 6px double rgb(180, 88, 88);
+    border-radius: 15px;
+    padding: 10px;
+    color: black;
+    background-color: peachpuff;
+}
+.result-h2{
+    text-decoration: none;
+}
+
 .scores {
     display: flex;
     justify-content: center;
