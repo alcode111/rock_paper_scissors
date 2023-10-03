@@ -12,6 +12,7 @@ const rps = ["rock", "paper", "scissors"];
 
 const buttons = document.querySelectorAll('button');
 
+let userChoice;
 let computerChoice = "";
 
 let userScore = 0;
